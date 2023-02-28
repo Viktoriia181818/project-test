@@ -1,7 +1,7 @@
 import React from 'react';
 import { RegistrationForm } from 'components/RegistrationForm/RegistrationForm';
 
-import { useMatchMedia } from 'hooks/use-match-media';
+import { useMatchMedia } from 'mediaScreen/use-match-media';
 import {
   StyledRegisterPage,
   Image,

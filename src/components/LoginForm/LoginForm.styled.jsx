@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import { OrangeButton } from 'components/Buttons/OrangeButton';
+import { OrangeButton } from 'components/Buttons/btnLogin';
 import styled from 'styled-components';
 
 export const StyledformRegister = styled.div`

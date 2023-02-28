@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { registerAPI } from 'services/apiAuth';
-import { logIn } from 'redux/auth/operations';
-import { OrangeButton } from '../Buttons/OrangeButton';
+import { logIn } from 'redux/auth/operation';
+import { OrangeButton } from '../Buttons/btnLogin';
 import {
   StyledformRegister,
   StyledpromtText,
@@ -14,7 +14,7 @@ import {
 } from './RegistrationForm.styled';
 
 export const RegistrationForm = () => {
-  // State
+
   const [emailDirty, setEmailDirty] = useState(false);
   const [passwordDirty, setPasswordDirty] = useState(false);
   const [emailError, setEmaiError] = useState('This is a required field');
@@ -22,9 +22,9 @@ export const RegistrationForm = () => {
     'This is a required field'
   );
   const [errorSymbol, setErrorSymbol] = useState('*');
-  // Dispatch
+
   const dispatch = useDispatch();
-  // Handle Submit
+ 
   const handleSubmit = async event => {
     event.preventDefault();
     const { email, password } = event.target.elements;

@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { HandySvg } from 'handy-svg';
 
+
 export const StyledLoginPage = styled.div``;
 
 export const Background = styled.div`

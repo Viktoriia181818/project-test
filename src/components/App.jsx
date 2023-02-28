@@ -4,15 +4,14 @@ import { useDispatch, useSelector } from 'react-redux';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { SharedLayouts } from './SharedLayouts/SharedLayouts';
-import { addAccessToken } from 'redux/auth/auth.slice';
+import { addAccessToken } from 'redux/auth/authSlice';
 import { setAuthHeader } from 'services/apiAuth';
-import { refreshUser } from 'redux/auth/operations';
-import { selectIsFetcingCurrentUser, selectToken } from 'redux/selectors';
+import { refreshUser } from 'redux/auth/operation';
+import { selectIsFetcingCurrentUser, selectToken } from 'redux/selector';
 import { PrivateRoute } from './PrivateRoute/PrivateRoute';
 import { PublicRoute } from './PublicRoute/PublicRoute';
 
 
-// Lazy load
 const LoginPage = lazy(() => import('../pages/LoginPage/LoginPage'));
 const RegiserPage = lazy(() => import('../pages/RegisterPage/RegisterPage'));
 const ThereIsNoSuchPage = lazy(() =>
@@ -20,17 +19,18 @@ const ThereIsNoSuchPage = lazy(() =>
 );
 
 export const App = () => {
-  // Dispatch
+  
   const dispatch = useDispatch();
-  // Selectors
+ 
   const token = useSelector(selectToken);
   const isFetchingUser = useSelector(selectIsFetcingCurrentUser);
 
-  // Location for google authorization
+
   const location = window.location;
   const urlSearchParams = new URLSearchParams(location.search);
   const accessToken = urlSearchParams.get('accessToken');
-  // Change pathname if succesfull google authorization
+ 
+
   useEffect(() => {
     if (accessToken) {
       setAuthHeader(accessToken);

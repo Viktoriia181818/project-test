@@ -9,15 +9,15 @@ import {
   StyledCloseButton,
   StyledModalBackdrop,
 } from './LightModalWindow.styled';
-import { OrangeButton } from 'components/Buttons/OrangeButton';
-import { WhiteButton } from 'components/Buttons/WhiteButton';
+import { OrangeButton } from 'components/Buttons/btnLogin';
+import { WhiteButton } from 'components/Buttons/btnLoginWhite';
 import close from '../../images/close.svg';
 
-// Query selectors
+
 const modalRoot = document.getElementById('modal-root');
 const body = document.querySelector('body');
 
-// Modal window
+
 export const LightModalWindow = ({
   children,
   closeModal,
@@ -25,19 +25,19 @@ export const LightModalWindow = ({
   changeBalance,
   text,
 }) => {
-  // Close on Esc button
+ 
   const handleEscapeClose = event => {
     if (event.code === 'Escape') {
       closeModal();
     }
   };
-  // Close on backdrop click
+ 
   const handleBackdropClose = event => {
     if (event.target === event.currentTarget) {
       closeModal();
     }
   };
-  // No scroll of body when modal window is open
+ 
   useEffect(() => {
     window.addEventListener('keydown', handleEscapeClose);
 
@@ -53,9 +53,9 @@ export const LightModalWindow = ({
       className="modal-backdrop"
       onClick={handleBackdropClose}
     >
-      {/* Modal window */}
+      
       <StyledModalWindow>
-        {/* Close button img X */}
+       
         <StyledCloseButton onClick={closeModal}>
           <img src={close} alt="close" />
         </StyledCloseButton>

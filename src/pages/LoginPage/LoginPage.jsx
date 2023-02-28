@@ -1,6 +1,6 @@
 import React from 'react';
 import { LoginForm } from 'components/LoginForm/LoginForm';
-import { useMatchMedia } from '../../hooks/use-match-media';
+import { useMatchMedia } from '../../mediaScreen/use-match-media';
 
 import {
   StyledLoginPage,

@@ -14,7 +14,7 @@ import {
   LogInBtn,
   StyledNavlink,
 } from './LoginForm.styled';
-import { logIn } from 'redux/auth/operations';
+import { logIn } from 'redux/auth/operation';
 
 
 export const LoginForm = () => {
